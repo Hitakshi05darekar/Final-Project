@@ -62,32 +62,43 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* Scroll Seamline Section */
 .ritual-scroll-section {
   position: relative;
   height: 100vh;
-  background: url('./images/seamline-placeholder.jpg') repeat-x center center/cover;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 0;
+  overflow: hidden;
+}
+
+.ritual-scroll-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./images/backgraound.jpg') repeat-x center center / cover;
+  opacity: 0.60; /* 75% opacity */
+  z-index: 0;
 }
 
 .scroll-overlay {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 30px 50px;
-  border-radius: 10px;
+  position: relative;
+  z-index: 1;
   text-align: center;
-  max-width: 700px;
+  max-width: 90%;
+  padding: 0;
 }
 
 .scroll-text {
   font-family: 'Meqanor', serif;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  color: white;
-  transition: opacity 0.5s ease;
+  font-size: 4vw;
+  letter-spacing: 4px;
+  color: ghostwhite;
+  text-shadow: none;
 }
+
 
 /* User Ritual Section */
 .user-rituals {
@@ -146,4 +157,3 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
-
